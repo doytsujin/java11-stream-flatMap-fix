@@ -9,9 +9,10 @@ import static org.hamcrest.MatcherAssert.assertThat;
  * Created by mtumilowicz on 2018-11-13.
  */
 public class FlatMapLaziness {
+    
     @Test
     public void flatMap_laziness_unlimitedStream() {
-       Stream.of(1)
+        Stream.of(1)
                 .flatMap(x -> Stream.generate(Math::random))
                 .findFirst()
                 .orElseThrow(IllegalStateException::new);
